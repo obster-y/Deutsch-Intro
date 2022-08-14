@@ -1,0 +1,48 @@
+\begin{tikzpicture}[
+    level distance=1.5cm,
+    level 2/.style={level distance=2.2cm},
+    level 3/.style={level distance=2cm},
+    edge from parent path={(\tikzparentnode.south) -- +(0,-12pt) -| (\tikzchildnode)},
+    every tree node/.style={align=center,anchor=north},
+    ]
+
+    \begin{scope}
+        \Tree
+        [.\node[draw]{用途};
+            [.{情态动词} ]
+            [.{助动词} ]
+            [.{实义动词} ] ]
+    \end{scope}
+
+    \begin{scope}[xshift=5cm]
+        \Tree
+        [.\node[draw]{宾语};
+            [.{及物动词} ]
+            [.{不及物动词} ] ]
+    \end{scope}
+
+    \begin{scope}[yshift=-2.7cm]
+        \Tree
+        [.\node[draw]{分词搭配助动词};
+            [.{使用haben} ]
+            [.{使用sein} ] ]
+    \end{scope}
+
+    \begin{scope}[xshift=5cm, yshift=-2.7cm]
+        \Tree
+        [.\node[draw]{其它};
+            [.{反身动词} ]
+            [.{可分/不可分动词} ] ]
+    \end{scope}
+
+    \begin{scope}[xshift=2.5cm, yshift=-5.4cm]
+        \Tree
+        [.\node[draw]{变位};
+            [.{不规则动词\\unregelmäßige \boxed{unr.}}
+                [.{强变化动词\\starke}
+                    [.{元音音变规律\\A/B/C} ] ]
+                [.{混合变化动词\\gemischte} ] ]
+            [.{规则动词\\regelmäßige}
+                [.{弱变化动词\\schwache \boxed{sw.}} ] ] ]
+    \end{scope}
+\end{tikzpicture}

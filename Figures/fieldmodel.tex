@@ -1,0 +1,37 @@
+
+\tikzset{
+    ncbar angle/.initial=90,
+    ncbar/.style={
+        to path=(\tikztostart)
+        -- ($(\tikztostart)!#1!\pgfkeysvalueof{/tikz/ncbar angle}:(\tikztotarget)$)
+        -- ($(\tikztotarget)!($(\tikztostart)!#1!\pgfkeysvalueof{/tikz/ncbar angle}:(\tikztotarget)$)!\pgfkeysvalueof{/tikz/ncbar angle}:(\tikztostart)$)
+        -- (\tikztotarget)
+    },
+    ncbar/.default=0.5cm,
+}
+
+\tikzset{square left brace/.style={ncbar=0.12cm}}
+\tikzset{square right brace/.style={ncbar=-0.12cm}}
+
+\begin{tikzpicture}[
+    every node/.style={align=center, inner sep=1mm},
+    node distance=0.25cm,
+    align = center,
+    ]
+
+    \begin{scope}[xshift=0cm, yshift=0cm]
+        \node (VF) [inner sep=0mm] {前区\\(Vorfeld)};
+        \node (LSK) [right=of VF,draw] {左框\\(linke Satzklammer)};
+        \node (MF) [right=of LSK,inner sep=0mm] {中区\\(Mittelfeld)};
+        \node (RSK) [right=of MF,draw] {右框\\(rechte Satzklammer)};
+        \node (NF) [right=of RSK,inner sep=0mm] {后区\\(Nachfeld)};
+        \draw [black, thick] (VF.south west) to [square left brace] (VF.north west);
+        \draw [black, thick] (VF.south east) to [square right brace] (VF.north east);
+        \draw [black, thick] (MF.south west) to [square left brace] (MF.north west);
+        \draw [black, thick] (MF.south east) to [square right brace] (MF.north east);
+        \draw [black, thick] (NF.south west) to [square left brace] (NF.north west);
+        \draw [black, thick] (NF.south east) to [square right brace] (NF.north east);
+        \draw [decorate, decoration={brace, raise=0.2cm, amplitude = 0.5cm}] (VF.north) to node[above=0.7cm] {分区结构(Feldermodell)} (NF.north);
+        \draw [decorate, decoration={brace, raise=0.1cm, amplitude = 0.3cm, mirror}] (LSK.south) to node[below=0.4cm] {句框(Satzklammer)} (RSK.south);
+    \end{scope}
+\end{tikzpicture}

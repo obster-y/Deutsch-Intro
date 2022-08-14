@@ -1,0 +1,73 @@
+\documentclass[
+    draft,
+    use boldface,
+    ]{einfart}
+
+\usepackage{ProjLib}
+\UseLanguage{CN}
+
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\definecolor{dimgray}{rgb}{0.9,0.9,0.9}
+\definecolor{dimyellow}{rgb}{0.973,0.929,0.604}
+\definecolor{markyellow}{rgb}{0.973,0.929,0.604}
+\definecolor{markgreen}{rgb}{0.663,0.816,0.557}
+\definecolor{markred}{rgb}{0.957,0.69,0.518}
+\definecolor{markblue}{rgb}{0.867,0.922,0.969}
+\definecolor{columbiablue}{rgb}{0.61, 0.87, 1.0}
+
+\graphicspath{{./Figures/}}
+
+\usepackage{tabularray}
+\usepackage{threeparttablex}
+\UseTblrLibrary{diagbox}
+\NewTblrTheme{nocaption}{
+    % \DefTblrTemplate{contfoot-text}{default}{}
+    % \DefTblrTemplate{conthead-text}{default}{}
+    % \DefTblrTemplate{conthead}{default}{}
+    \DefTblrTemplate{caption}{default}{}
+    \DefTblrTemplate{capcont}{default}{}
+}
+
+\DeclareDocumentCommand{\e}{O{markyellow}}{%
+    \bgroup\markoverwith
+    {\textcolor{#1}{\rule[-.5ex]{2pt}{2.5ex}}}\ULon
+}
+\DeclareDocumentCommand{\boxtbl}{m m}{%
+    \smash{\color{red}\fboxrule=1pt\relax\fboxsep=1pt\relax%
+        \llap{\rlap{\fbox{\phantom{\rule{#1}{#2}}}}~}}\ignorespaces
+}
+\DeclareDocumentCommand{\example}{m m}{%
+    #1
+
+    \textcolor{codegray}{#2}
+
+    \smallskip
+}
+
+\usepackage{tikz}
+\usepackage{tikz-qtree}
+\usetikzlibrary{shapes,arrows,positioning,trees,calc,decorations.pathreplacing}
+
+
+
+
+\begin{document}
+
+\title{德语语法简介}
+\author{Obster-Y}
+\date{\TheDate{2022-08-12}}
+\maketitle
+
+% \include{Spine/basic}
+% \include{Spine/nouns&declension}
+% \include{Spine/verbs&conjugation}
+% \include{Spine/prepositions}
+% \include{Spine/miscellaneous}
+\include{Spine/order}
+% \include{Spine/appendices}
+
+\end{document}

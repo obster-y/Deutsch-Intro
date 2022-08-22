@@ -7,6 +7,7 @@
 \UseLanguage{CN}
 
 
+\usepackage{ninecolors}
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
 \definecolor{codepurple}{rgb}{0.58,0,0.82}
@@ -43,10 +44,51 @@
 \DeclareDocumentCommand{\example}{m m}{%
     #1
 
-    \textcolor{codegray}{#2}
+    {\color{codegray}#2}
 
     \smallskip
 }
+
+\DeclareDocumentCommand\ulinet{m m}{\bgroup\markoverwith
+    {{\rule[-0.5ex]{#1}{#2}}}\ULon}
+
+\ExplSyntaxOn
+\box_new:N \l_compare_a_box
+\box_new:N \l_compare_b_box
+\box_new:N \l_height_box
+\dim_new:N \l_wd_dim
+\dim_new:N \l_ht_dim
+\NewDocumentCommand{\ult}{ m m O{0.4pt} }{
+    \hbox_set:Nn \l_compare_a_box { #1 }
+    \hbox_set:Nn \l_compare_b_box { #2 }
+
+    \dim_zero:N \l_ht_dim
+    \vbox_set:Nn \l_height_box {X}
+    \dim_add:Nn \l_ht_dim {\box_ht:N \l_height_box}
+    \vbox_set:Nn \l_height_box {X}
+    \dim_add:Nn \l_ht_dim {\box_ht:N \l_height_box}
+
+    \dim_compare:nTF {\box_wd:N \l_compare_a_box > \box_wd:N \l_compare_b_box}
+        {\dim_set:Nn \l_wd_dim {\box_wd:N \l_compare_a_box}}
+        {\dim_set:Nn \l_wd_dim {\box_wd:N \l_compare_b_box}}
+
+    \use:n {
+        \raisebox{
+            -0.34\baselineskip
+        }{
+            \begin{tblr}{
+                rows={t,abovesep=0pt,belowsep=0pt},columns={c,leftsep=0pt,rightsep=0pt},
+                hline{2},hborder{1-Z}={abovespace=-2pt,belowspace=-2pt},
+            }#1\\#2
+            \end{tblr}
+            % \shortstack{
+            %     \ulinet{\l_wd_dim}{#3}{#1}\\
+                % #2\vspace{\lineskip}
+            % }
+        }
+    }
+}
+\ExplSyntaxOff
 
 \usepackage{tikz}
 \usepackage{tikz-qtree}

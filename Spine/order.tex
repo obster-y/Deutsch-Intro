@@ -12,6 +12,8 @@
 
 句框的核心是将谓语分成「变位部分」与「非变位部分」，将变位部分放在句框首部(左框/LSK)，非变位部分放在尾部(右框/RSK)。
 
+\DNF<动词第二顺位 V2 word order,CP-V2,IP-V2>
+
 需要按照句框构造的谓语可以有以下这些情况，加号左边为发生变位的部分(LSK)，右边为不变位的部分(RSK)：
 \begin{itemize}
     \item「werden/haben/sein + 实义动词」
@@ -109,7 +111,7 @@ VF 通常包含主语，或表示时间/元音/状态/地点的说明语。如�
 \end{itemize}
 
 \subsubsection{前区之前}
-有一些词称为零占位词，它们放在前区之前，不占据前区的位置，通常为并列连词或者一些副词。如： aber, denn, oder, und, sondern; auch, besonders, fast, nur, sogar, selbst。
+有一些词称为零占位词，它们放在前区之前，不占据前区的位置，通常为并列连词或者一些副词。如：aber, denn, oder, und, sondern; auch, besonders, fast, nur, sogar, selbst。
 
 \example{Aber \uline{er} hat die Prüfung nicht bestanden.}{但是他没有通过考试。}
 \example{\ldots, denn \uline{die Straßen} sind glatt.}{\ldots, 因为地滑。}
@@ -204,9 +206,7 @@ VF 通常包含主语，或表示时间/元音/状态/地点的说明语。如�
 
 句框结构这一规则导致的后果就是，在有很长的从句或很多限定词时导致 MF 太长，需要等到 MF 结束后才能知道 RSK 究竟是什么，因此在一些情况下，MF中的一些成分可以提取出来，放到 NF。这种将成分从 MF 移到 NF 的情况称为「破框」(Ausklammerung)，取「打破句框」之意，实则是将一些成分放至 NF。这并不是一种「固定搭配」「经验规则」，而是合规的语法变化。这种行为常见于口语，目的使对话更易理解。
 
-而后区，通常情况下可以不放置成分，所有放到 NF 的成分都可以放至原先位置。
-
-\subsubsection{通常的后区成分}
+\subsubsection{通常的后区成分}\label{sec:normal_NF}
 \begin{itemize}
     \item zu + 不定式: 若不定式结构简单，可放于 MF
     
@@ -224,19 +224,50 @@ VF 通常包含主语，或表示时间/元音/状态/地点的说明语。如�
 
     \example{Wir haben ihn kennen gelernt \uline{als aufrichtigen Menschen, guten Freund, ehrlichen Kollegen, und engargierten Gemeindebürger.}}{我认识的他是一个正直的人、一个好朋友、真诚的同事和热心的市民。}
 
-    \item 介词词组
+    \item 介词词组: 虽然介词词组也可置于 MF，但现代德语有将其后置的趋势，尤其是当结构较为复杂时。同时，也可起到表达强调语气的作用，如同添加了 und zwar。但如果介词词组不完整，如代/副词形式的介词不可位于 NF。
+
+    \example{Die Aufgabe wurde gelöst \uline{durch eine erfahrene, aus Vertretern verschiedener deutscher Universitäten und technischer Hochschulen zusammengesetzte Expertengruppe}.}{这项任务是由一支有经验的，由多家德国综合性和技术高效代表组成的专家小组完成的。}
+
+    \example{Warum sollte ich dann noch reden, (und zwar) \uline{mit diesem unausstehlichen Menschen!}}{我为什么还要讲话，而且是跟这么一个令人讨厌的人！}
+
+    \example{\sout{Ich hab nicht gedach daran.}\\Ich hab nitch daran gedacht.}{这我没有想到。}
+
+    \example{\sout{Wir haben uns entschieden dafür}, ein Vertretungsbüro in China aufzustellen.\\Wir haben uns dafür entschieden, ein Vertretungsbüro in China aufzustellen.}{我们决定在中国设立一个代表处。}
+
+    \item 同位语: 如果同位语的修饰成分不是过于紧密，可以位于 NF, 或为了取得特殊的文体效果。
+
+    \example{Der Redner hat auch Helmut Schmidt gewürdigt, \uline{den international bekannten Politiker und in Deutschland immer noch von vielen geschätzten Albundeskanzler}.}{演讲者也赞扬了 H·S， 这位世界知名的政治家，在德国至今受到广泛尊敬的老德国总理。}
+
+    \example{Er ist an Krebs gestorben, \uline{dieser heimtückischen Krankheit}.}{他死于癌症，这种恶性疾病。}
+
+    \item 从句: 大多数情况从句位于 NF，但有时也可位于 MF
     
-    \example
-    \item 同位语
-    \item 从句
+    \example{Kannst du mir sagen, \uline{wie spät es ist}?}{你能告诉我现在位于几点了吗？}
+
+    \example{Wir sind, \uline{weil es so stark regnete}, nicht ans Meer gegangen.}{由于雨下的很大，我们没有去海边。}
 \end{itemize}
 
 \subsubsection{不可放置于后区的成分}
 
 \begin{itemize}
     \item 主语、宾语
+
+    \example{\sout{Leider ist immer noch nicht eingetroffen der Auftrag.}}{可惜订单一直没到。}
+
     \item 表语
+
+    \example{\sout{Sie wollte schon immer werden Pilotin bei der Luftwaffe.}}{她一直想成为空军飞行员。}
+
     \item 无介词引导的状语
+
+    \example{\sout{Du darfst nicht reden so unanständig.}}{你讲话不能这么不正经。}
+
     \item 代副词
+
+    \example{\sout{Er hat sich bedankt dafür, dass Sie ihm in solcheiner schwierigen Lage beistehen.}}{他感谢您在这样的困境下还给他提供帮助。}
+
     \item 小品词
+
+    \example{\sout{das hättest du nicht machen sollen aber.}}{你可不应该这样做。}
+
 \end{itemize}

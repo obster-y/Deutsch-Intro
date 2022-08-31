@@ -6,6 +6,10 @@
 \usepackage{ProjLib}
 \UseLanguage{CN}
 
+\newfontfamily{\ipa}{CMU Serif}
+
+\usepackage{siunitx}
+\sisetup{range-phrase=\textasciitilde}
 
 \usepackage{ninecolors}
 \definecolor{codegreen}{rgb}{0,0.6,0}
@@ -26,14 +30,15 @@
 \usepackage{threeparttablex}
 \UseTblrLibrary{diagbox}
 \NewTblrTheme{nocaption}{
-    % \DefTblrTemplate{contfoot-text}{default}{}
-    % \DefTblrTemplate{conthead-text}{default}{}
-    % \DefTblrTemplate{conthead}{default}{}
     \DefTblrTemplate{caption}{default}{}
     \DefTblrTemplate{capcont}{default}{}
 }
 
 \DeclareDocumentCommand{\e}{O{markyellow}}{%
+    \bgroup\markoverwith
+    {\textcolor{#1}{\rule[-.5ex]{2pt}{2.5ex}}}\ULon
+}
+\DeclareDocumentCommand{\ee}{O{dimgray}}{%
     \bgroup\markoverwith
     {\textcolor{#1}{\rule[-.5ex]{2pt}{2.5ex}}}\ULon
 }
@@ -48,9 +53,6 @@
 
     \smallskip
 }
-
-\DeclareDocumentCommand\ulinet{m m}{\bgroup\markoverwith
-    {{\rule[-0.5ex]{#1}{#2}}}\ULon}
 
 \ExplSyntaxOn
 \box_new:N \l_compare_a_box
@@ -81,11 +83,19 @@
                 hline{2},hborder{1-Z}={abovespace=-2pt,belowspace=-2pt},
             }#1\\#2
             \end{tblr}
-            % \shortstack{
-            %     \ulinet{\l_wd_dim}{#3}{#1}\\
-                % #2\vspace{\lineskip}
-            % }
         }
+    }
+}
+\clist_set:Nn \l_colorlist_clist {red9,yellow9,olive9,cyan9,gray9,brown9,azure9,violet9}
+\int_new:N \l_index_int
+\int_new:N \l_colorlistcount_int
+\int_set:Nn \l_colorlistcount_int {\clist_count:N \l_colorlist_clist}
+\NewDocumentCommand{\uleach}{m}{
+    \int_zero:N \l_index_int
+    \clist_map_inline:nn { #1 } {
+        \int_incr:N \l_index_int
+        {\e[\clist_item:Nn \l_colorlist_clist \l_index_int]{##1}}
+        \int_compare:nTF {\l_index_int >= \l_colorlistcount_int} {\int_zero:N \l_index_int} {}
     }
 }
 \ExplSyntaxOff
@@ -104,13 +114,13 @@
 \date{\TheDate{2022-08-12}}
 \maketitle
 \tableofcontents
-% \include{Spine/basic}
-% \include{Spine/nouns&declension}
-% \include{Spine/verbs&conjugation}
-% \include{Spine/prepositions}
-% \include{Spine/miscellaneous}
-% \include{Spine/order}
+\include{Spine/basic}
+\include{Spine/nouns&declension}
+\include{Spine/verbs&conjugation}
+\include{Spine/prepositions}
+\include{Spine/miscellaneous}
+\include{Spine/order}
 \include{Spine/clause}
-% \include{Spine/appendices}
+\include{Spine/appendices}
 
 \end{document}

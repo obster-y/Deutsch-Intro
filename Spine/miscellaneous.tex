@@ -2,14 +2,21 @@
 \subsection{副词}
 德语没有副词化形容词的词尾「-ly」，只要意义符合，形容词可以直接当作副词使用。同时「-erweise」类似于「-ly」，不过是修饰整个从句而非单个动词或形容词。
 
+da(r)-, hier-, wo(r)- 与一些代词组成代副词(Pronominaladverbien)，如果介词以元音开头，则需要添加(r)。
 
-\begin{table}[htbp]
-    \centering
-\begin{tblr}{
+\subsubsection{副词列表}
+
+\begin{longtblr}[
+    theme=nocaption,
+    presep=2pt,
+]{
     width=\linewidth,
+    % rowhead=1,
     colspec={X[l,1.5]X[l,3.5]||X[l,1.5]X[l,3.5]},
+    columns={l,colsep=3pt},
+    rows={m},
 }
-    \SetCell[c=2]{c} 地点副词 &                 & \SetCell[c=2]{c} 疑问副词 & \\
+    \SetCell[c=2]{c} \textbf{地点副词} & & \SetCell[c=2]{c} \textbf{疑问副词} & \\
     \hline
     aufwärts           & upward                 & warum         & why         \\
     auseinander        & separated, apart       & was           & what        \\
@@ -30,16 +37,8 @@
     unten              & under                  &               &             \\
     vorn(e)            & in front, at the front &               &             \\
     vorwärts           & forward                &               &             \\
-\end{tblr}
-\end{table}
-
-\begin{table}[htbp]
-    \centering
-\begin{tblr}{
-    width=\textwidth,
-    colspec={X[l,1.5]X[l,3.5]||X[l,1.5]X[l,3.5]},
-}
-    \SetCell[c=2]{c} 时间副词 &             & \SetCell[c=2]{c} 行为副词 &               \\
+    \hline
+    \SetCell[c=2]{c} \textbf{时间副词} & & \SetCell[c=2]{c} \textbf{行为副词} &         \\
     \hline
     anfangs    & at the beginning           & beinahe        & nearly, almost           \\
     bald       & soon                       & besonders      & especially               \\
@@ -75,10 +74,35 @@
     wieder     & again                      & zurück         & back                     \\
     zuerst     & first, at first            & zusammen       & together                 \\
     zurzeit    & at the moment, at present  &                &                          \\
+\end{longtblr}
+
+\subsubsection{副词的变级级}
+副词比较级和形容词一样，而最高级可以是副词前添加「am」词尾添加「-sten」或不添加「am」，词尾添加「-stens」。副词的比较级只能做状语或表语，而最高级仅表示强烈程度时，通常采用「aufs/ins + 最高级-ste」或「原形+stens」。
+
+\example{Er trinkt gern Kaffee, aber ich trinke liber Tee.}{他喜欢喝咖啡，我更喜欢喝茶。}
+
+\example{Ich bedanke mich für Ihre Hilfe aufs \uline{herzlichste}.}{对于您给予的帮助，我致以最衷心的谢意。}
+
+\example{Ich habe dir \uline{mindestens} dreimal gesagt, dass ich morgen losgehe.}{我至少跟你讲过三次了，我明天出发}
+
+有一些副词的变级是不规律的：
+\begin{table}
+\centering
+\begin{tblr}{
+    colspec={ccc}
+}
+    \textbf{原形} & \textbf{比较级} & \textbf{最高级} \\
+    \hline
+    bald & früher / eher & am frühesten / am ehesten \\
+    gern & lieber & am liebsten \\
+    oft & häufiger/ öfter & am häufigsten \\
+    viel & mehr & am meisten \\
+    wenig & minder / weniger & am mindesten / am wenigsten \\
+    wohl & besser & am besten \\
 \end{tblr}
 \end{table}
 
-\clearpage
+
 \subsection{连词}\label{sec:conjunction}
 德语对于并列连词与从属连词分得比较清楚。
 

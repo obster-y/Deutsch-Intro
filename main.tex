@@ -104,8 +104,8 @@
 \usepackage{tikz-qtree}
 \usetikzlibrary{shapes,arrows,positioning,trees,calc,decorations.pathreplacing}
 
-
-
+\RequirePackage[hyperref=true,backend=biber,defernumbers=true]{biblatex}
+\addbibresource{Refs/references.bib}
 
 \begin{document}
 
@@ -121,6 +121,11 @@
 \include{Spine/miscellaneous}
 \include{Spine/order}
 \include{Spine/clause}
+
+\section{参考文献}
+\nocite{*}
+\printbibliography[heading=none]
+
 \include{Spine/appendices}
 
 \end{document}
